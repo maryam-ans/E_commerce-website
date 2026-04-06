@@ -1,0 +1,164 @@
+/* Navbar sticks to the top of the page */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* Semi-transparent so you can see a blur of the page behind it */
+  background: rgba(10, 10, 15, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  height: var(--navbar-h);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1rem;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  color: var(--purple);
+  font-size: 1.4rem;
+}
+
+/* Desktop links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  padding: 0.38rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.15s, background 0.15s;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Underline on active link */
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 999px;
+}
+
+/* Icons on the right (search, wishlist, cart) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* Each icon button */
+.nav-icon-btn {
+  position: relative;
+  color: var(--text-muted) !important;
+}
+.nav-icon-btn:hover {
+  color: var(--text-main) !important;
+}
+
+/* Badge shows count (e.g. 3 items in cart) */
+.nav-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--purple);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-main);
+}
+
+/* ── Search bar that drops down ── */
+.search-bar-overlay {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.97);
+  backdrop-filter: blur(16px);
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.5rem;
+}
+
+.search-icon { color: var(--text-dim); flex-shrink: 0; }
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+}
+.search-input::placeholder { color: var(--text-dim); }
+
+/* ── Mobile menu ── */
+.mobile-menu-btn { display: none; }
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.99);
+}
+
+.mobile-nav-link {
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--text-main);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Show mobile menu button on small screens */
+@media (max-width: 768px) {
+  .navbar-links    { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .mobile-nav      { display: flex; }
+}

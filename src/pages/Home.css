@@ -1,0 +1,240 @@
+/* =============================================
+   Home Page Styles
+   - Simple, clean layout
+   - Works on all screen sizes
+   ============================================= */
+
+.home-page {
+  flex: 1;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, #0f0f1a, #1a0d2e);
+  padding: 80px 0 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #a78bfa;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  color: #a0a0b8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* Quick stats row */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.stat-lbl {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b6b80;
+}
+
+.stat-sep {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ── Features Bar ── */
+.features-bar {
+  background: #12121a;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 1.5rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.feature-icon {
+  font-size: 1.3rem;
+  color: #8b5cf6;
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.feature-desc {
+  font-size: 0.78rem;
+  color: #6b6b80;
+}
+
+/* ── Section shared styles ── */
+.section {
+  padding: 3rem 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ── Categories ── */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.25rem 1rem;
+  background: #16161f;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.category-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-3px);
+}
+
+.cat-icon {
+  font-size: 1.6rem;
+}
+
+.cat-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  flex: 1;
+}
+
+.cat-arrow {
+  color: #6b6b80;
+  transition: transform 0.2s;
+}
+
+.category-card:hover .cat-arrow {
+  transform: translateX(4px);
+  color: #8b5cf6;
+}
+
+/* ── Products grid ── */
+.home-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.product-skeleton-home {
+  background: #16161f;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ── CTA Banner ── */
+.cta-section {
+  padding: 2rem 0 4rem;
+}
+
+.cta-box {
+  background: #16161f;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+}
+
+.cta-icon {
+  color: #8b5cf6;
+}
+
+.cta-box h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cta-box p {
+  color: #a0a0b8;
+  font-size: 0.95rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 1.8rem; }
+  .hero { padding: 50px 0 40px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .categories-grid { grid-template-columns: 1fr 1fr; }
+  .home-products-grid { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+}

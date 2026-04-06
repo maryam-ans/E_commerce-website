@@ -1,0 +1,115 @@
+.wishlist-page {
+  flex: 1;
+  padding-bottom: var(--spacing-3xl);
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.wishlist-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.wishlist-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.wishlist-image-wrap {
+  display: block;
+  background: #fff;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wishlist-image {
+  max-height: 160px;
+  object-fit: contain;
+  padding: 1rem;
+  transition: transform var(--transition-slow);
+}
+
+.wishlist-card:hover .wishlist-image {
+  transform: scale(1.05);
+}
+
+.wishlist-info {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.wishlist-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-light);
+}
+
+.wishlist-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
+}
+
+.wishlist-title:hover {
+  color: var(--color-primary-light);
+}
+
+.wishlist-rating {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.wishlist-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-sm);
+}
+
+.wishlist-price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.wishlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.in-cart-btn {
+  background: rgba(16,185,129,0.15);
+  color: var(--color-success);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.remove-wishlist-btn {
+  color: var(--color-text-muted) !important;
+}
+.remove-wishlist-btn:hover {
+  color: var(--color-danger) !important;
+}
+
+@media (max-width: 600px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr;
+  }
+}
